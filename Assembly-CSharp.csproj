@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Managers\MenuManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\MenuUIManager.cs" />
     <Compile Include="Assets\Scripts\Individual\ExitDoor.cs" />
     <Compile Include="Assets\Scripts\Enemies\StaticEnemy.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
