@@ -4,21 +4,37 @@ using UnityEngine;
 
 public class ExitDoor : MonoBehaviour
 {
-    // Trigger for final door
-    private void OnTriggerStay(Collider other)
+    private bool isPlayerNear;
+    void Start()
     {
-        // Check if the trigger was the player
-
-        if(other.CompareTag("Player"))
+        isPlayerNear=false;
+    }
+    void Update()
+    {
+        if(isPlayerNear)
         {
-            // Check if the Key is pressed and key count
-
-            if(Input.GetKeyDown(KeyCode.E) && other.GetComponent<PlayerController>().keyCount>=3)
+            if(Input.GetKeyDown(KeyCode.E) && GameObject.Find("Player").GetComponent<PlayerController>().keyCount>=3)
             {
                 UIManager.Instance.GameWon();   // Triggering the game won screen
                 Time.timeScale=0;               // Making the time scale to 0 for pausing the game
-                Destroy(gameObject);            // Destroying the door
+                Destroy(gameObject);            // Destroying the game object
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            isPlayerNear=true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            isPlayerNear=false;
         }
     }
 }

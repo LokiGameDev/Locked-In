@@ -68,10 +68,8 @@ public class PlayerController : MonoBehaviour
         {
             UIManager.Instance.EnemyLevelScreen(keyCount);
         }
+        GameManager.Instance.EnableLevelEnemy(keyCount);
         keyCount+=1;
-        if(keyCount>2){
-            GameManager.Instance.EnableLevelEnemy(2);
-        }
     }
 
     // Player death function

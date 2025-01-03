@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
         if(isIntroScreeEnabled && Input.GetKeyDown(KeyCode.E))
         {
             introScreen.SetActive(false);
+            isIntroScreeEnabled=false;
             playerController.GameStarted();     // Trigger the game started function
         }
     }

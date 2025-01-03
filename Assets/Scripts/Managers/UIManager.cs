@@ -49,11 +49,7 @@ public class UIManager : MonoBehaviour
                 isIntructionOn=false;
                 enemyLevelInstructions[_screenLevel].SetActive(false);
                 if(_screenLevel==1){
-                    FinalEnemyLevelScreen();
-                }
-                if(_screenLevel<2)
-                {
-                    GameManager.Instance.EnableLevelEnemy(_screenLevel);
+                    EnemyLevelScreen(2);
                 }
             }
         }
@@ -76,11 +72,6 @@ public class UIManager : MonoBehaviour
         isIntructionOn=true;
         _screenLevel = screenLevel;
         enemyLevelInstructions[screenLevel].SetActive(true);
-    }
-
-    private void FinalEnemyLevelScreen()
-    {
-        EnemyLevelScreen(2);
     }
 
     // Restarting the game
