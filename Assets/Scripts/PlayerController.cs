@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(isPlayerAlive && !UIManager.Instance.isIntructionOn)
+        if(isPlayerAlive && !UIManager.Instance.isIntructionOn && !UIManager.Instance.isGamePaused)
         {
             Movement();
             if(Input.GetKeyDown(KeyCode.Space))
@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
     public void GotHit()
     {
         isPlayerAlive=false;
+        UIManager.Instance.GameOver();
     }
 
     // Start of the Game

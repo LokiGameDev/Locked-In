@@ -26,7 +26,9 @@ public class UIManager : MonoBehaviour
     private PlayerController playerController;
     public GameObject gameOverScreen;
     public GameObject gameWonScreen;
+    public GameObject pauseGameScreen;
     public bool isIntructionOn;
+    public bool isGamePaused;
     private int _screenLevel;
     public GameObject[] keyCountObjects;
     public GameObject[] enemyLevelInstructions;
@@ -34,13 +36,14 @@ public class UIManager : MonoBehaviour
     {
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
         isIntructionOn=false;
+        isGamePaused=false;
     }
 
     void Update()
     {
-        if(!playerController.isPlayerAlive && !GameManager.Instance.isIntroScreeEnabled)
+        if(!GameManager.Instance.isIntroScreeEnabled && !isIntructionOn && Input.GetKeyDown(KeyCode.Escape))
         {
-            gameOverScreen.SetActive(true);
+            PauseTheGame();
         }
         if(isIntructionOn)
         {
@@ -61,6 +64,20 @@ public class UIManager : MonoBehaviour
         gameWonScreen.SetActive(true);
     }
 
+    // Game Over screen
+    public void GameOver()
+    {
+        gameOverScreen.SetActive(true);
+    }
+
+    // Pausing the game
+    private void PauseTheGame()
+    {
+        pauseGameScreen.SetActive(true);
+        isGamePaused=true;
+        Time.timeScale=0;
+    }
+
     // Enabling image for each key collected
     public void GotAKey(int keyIndex)
     {
@@ -72,6 +89,14 @@ public class UIManager : MonoBehaviour
         isIntructionOn=true;
         _screenLevel = screenLevel;
         enemyLevelInstructions[screenLevel].SetActive(true);
+    }
+
+    // Resume the game
+    public void ResumeGame()
+    {
+        Time.timeScale=1;
+        pauseGameScreen.SetActive(false);
+        isGamePaused=false;
     }
 
     // Restarting the game
