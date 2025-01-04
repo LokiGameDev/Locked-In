@@ -313,9 +313,11 @@
 "Assets/Scripts/Enemies/StaticEnemy.cs"
 "Assets/Scripts/Individual/CameraMovement.cs"
 "Assets/Scripts/Individual/ExitDoor.cs"
+"Assets/Scripts/Individual/FlashOnOff.cs"
 "Assets/Scripts/Individual/Key.cs"
 "Assets/Scripts/Managers/GameManager.cs"
 "Assets/Scripts/Managers/MenuManager.cs"
+"Assets/Scripts/Managers/MenuUIManager.cs"
 "Assets/Scripts/Managers/UIManager.cs"
 "Assets/Scripts/PlayerController.cs"
 -langversion:9.0
