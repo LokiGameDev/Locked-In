@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public GameObject settingsMenu;
+    private void Start()
+    {
+        settingsMenu.SetActive(false);
+    }
     // Starting the game
     public void StartGame()
     {
@@ -20,5 +25,10 @@ public class MenuManager : MonoBehaviour
         #else
             Application.Quit();                 // Exiting the application
         #endif
+    }
+
+    public void SettingsMenu()
+    {
+        settingsMenu.SetActive(true);
     }
 }
