@@ -7,7 +7,7 @@ public class MenuUIManager : MonoBehaviour
     public GameObject creditScreen , titleScreen;
     public CanvasGroup creditBackGround;
     private bool fadeOut;
-    void StartUI()
+    void Start()
     {
         fadeOut=false;
         creditScreen.SetActive(true);

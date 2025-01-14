@@ -11,6 +11,17 @@ public class MenuManager : MonoBehaviour
     {
         settingsMenu.SetActive(false);
     }
+
+    private void Update()
+    {
+        if(settingsMenu.activeSelf)
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                SettingsExit();
+            }
+        }
+    }
     // Starting the game
     public void StartGame()
     {
@@ -30,5 +41,10 @@ public class MenuManager : MonoBehaviour
     public void SettingsMenu()
     {
         settingsMenu.SetActive(true);
+    }
+
+    public void SettingsExit()
+    {
+        settingsMenu.SetActive(false);
     }
 }
