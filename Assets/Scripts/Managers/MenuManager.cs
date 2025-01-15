@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         settingsMenu.SetActive(false);
+        Screen.fullScreen=true;
     }
 
     private void Update()
