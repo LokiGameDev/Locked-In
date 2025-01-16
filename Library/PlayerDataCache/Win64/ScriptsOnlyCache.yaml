@@ -13,6 +13,7 @@ ScriptsOnlyBuild:
     - PlayerController
     - SettingsManager
     - StaticEnemy
+    - TextFadeEffect
     - UIManager
     Unity.AI.Navigation.Editor.dll:
     - Unity.AI.Navigation.Editor.NavigationWindow
@@ -55,7 +56,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
-    - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
   serializedClasses:
     Unity.TextMeshPro:
@@ -89,7 +89,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.AnimationTriggers
     - UnityEngine.UI.Button/ButtonClickedEvent
     - UnityEngine.UI.ColorBlock
-    - UnityEngine.UI.FontData
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.ScrollRect/ScrollRectEvent
@@ -127,7 +126,7 @@ ScriptsOnlyBuild:
     methodName: SettingsMenu
   - assembly: Assembly-CSharp
     fullTypeName: SettingsManager
-    methodName: IndividualSettingMenu
+    methodName: SetResolution
   - assembly: Assembly-CSharp
     fullTypeName: MenuManager
     methodName: StartGame
@@ -228,7 +227,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 22132}
     - Class: 114
-      Script: {instanceID: 23032}
+      Script: {instanceID: 22264}
+    - Class: 114
+      Script: {instanceID: 23034}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -313,8 +314,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 20146}
     - Class: 114
-      Script: {instanceID: 20414}
-    - Class: 114
       Script: {instanceID: 20724}
     - Class: 114
       Script: {instanceID: 20888}
@@ -323,11 +322,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 21228}
     - Class: 114
-      Script: {instanceID: 22278}
+      Script: {instanceID: 22280}
     - Class: 114
-      Script: {instanceID: 22710}
+      Script: {instanceID: 22712}
     - Class: 114
-      Script: {instanceID: 22944}
+      Script: {instanceID: 22946}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1183,6 +1182,12 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: 8ce532eecc854670d5ea4203ad717e3a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TextFadeEffect
+  - hash:
+      serializedVersion: 2
       Hash: d5cd7f207e91ca8336c65a577a6fb2a0
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -1255,7 +1260,7 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: dcf2ca6bbeda9986e30a886b8991856c
+      Hash: 9e526f84758cade4240007f40b8dd041
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SettingsManager
