@@ -21,7 +21,6 @@ public class StaticEnemy : MonoBehaviour
     }
     void Update()
     {
-        transform.LookAt(GameObject.Find("Player").transform);
         if(!isAudioOn)
         {
             StartCoroutine(RandomEnemySound(Random.Range(5,10)));
