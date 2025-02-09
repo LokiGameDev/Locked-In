@@ -75,6 +75,7 @@ public class UIManager : MonoBehaviour
     {
         pauseGameScreen.SetActive(true);
         isGamePaused=true;
+        GetComponent<PlayerInventoryManager>().DisablePlayerInventory();
         Time.timeScale=0;
     }
 
@@ -97,6 +98,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale=1;
         pauseGameScreen.SetActive(false);
         isGamePaused=false;
+        GetComponent<PlayerInventoryManager>().EnablePlayerInventory();
     }
 
     // Restarting the game
@@ -115,5 +117,10 @@ public class UIManager : MonoBehaviour
         #else
             Application.Quit();
         #endif
+    }
+
+    public void EnablePlayerInventory()
+    {
+        GetComponent<PlayerInventoryManager>().EnablePlayerInventory();
     }
 }

@@ -372,6 +372,7 @@
 "Assets/Scripts/Managers/GameManager.cs"
 "Assets/Scripts/Managers/MenuManager.cs"
 "Assets/Scripts/Managers/MenuUIManager.cs"
+"Assets/Scripts/Managers/PlayerInventoryManager.cs"
 "Assets/Scripts/Managers/SettingsManager.cs"
 "Assets/Scripts/Managers/UIManager.cs"
 "Assets/Scripts/PlayerController.cs"

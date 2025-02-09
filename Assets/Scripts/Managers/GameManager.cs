@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
         {
             introScreen.SetActive(false);
             isIntroScreeEnabled=false;
+            UIManager.Instance.EnablePlayerInventory();     // Enable the player inventory
             playerController.GameStarted();     // Trigger the game started function
         }
     }

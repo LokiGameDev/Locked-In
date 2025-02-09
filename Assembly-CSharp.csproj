@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Individual\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Individual\Key.cs" />
+    <Compile Include="Assets\Scripts\Managers\PlayerInventoryManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\MovingEnemy.cs" />
     <Compile Include="Assets\Scripts\Individual\TextFadeEffect.cs" />
     <Compile Include="Assets\Scripts\Managers\MenuManager.cs" />
