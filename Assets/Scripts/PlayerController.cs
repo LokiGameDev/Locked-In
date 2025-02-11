@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour
     {
         get ; private set;
     }
+    public bool isPlayerNeedToPause
+    {
+        get ; private set;
+    }
     
     void Start()
     {
@@ -22,11 +26,12 @@ public class PlayerController : MonoBehaviour
         _rotationSpeed = 5f;
         keyCount = 0;
         playerRigidbody = GetComponent<Rigidbody>();
+        isPlayerNeedToPause=false;
     }
 
     void Update()
     {
-        if(isPlayerAlive && !UIManager.Instance.isIntructionOn && !UIManager.Instance.isGamePaused)
+        if(isPlayerAlive && !isPlayerNeedToPause && !UIManager.Instance.isIntructionOn && !UIManager.Instance.isGamePaused)
         {
             Movement();
             if(Input.GetKeyDown(KeyCode.Space))
@@ -83,5 +88,10 @@ public class PlayerController : MonoBehaviour
     public void GameStarted()
     {
         isPlayerAlive=true;
+    }
+
+    public void PlayerNeedToPause(bool condition)
+    {
+        isPlayerNeedToPause=condition;
     }
 }

@@ -7,6 +7,7 @@ public class PlayerInventoryManager : MonoBehaviour
 {
     public GameObject playerInventory;
     public GameObject[] inventorySlots;
+    public GameObject[] inventoryItems;
     private int _inventorySlotSelected;
     private int _totalSlots;
     public bool isPlayerInventoryOn
@@ -18,6 +19,7 @@ public class PlayerInventoryManager : MonoBehaviour
     {
         isPlayerInventoryOn=false;
         _inventorySlotSelected=0;
+        SelectSlot(_inventorySlotSelected);
         _totalSlots=4;
         DisablePlayerInventory();
     }
@@ -61,17 +63,20 @@ public class PlayerInventoryManager : MonoBehaviour
     }
     private void SelectSlot(int slotNumber)
     {
+        inventoryItems[slotNumber].SetActive(true);
         Image image = inventorySlots[slotNumber].GetComponent<Image>();
         Color color=image.color;
-        color.a=0.8f;
+        color = new Color(0.8f,0.8f,0.8f,1f);
         image.color=color;
     }
 
     private void DeselectSlot(int slotNumber)
     {
+        GameObject.Find("Player").GetComponent<PlayerController>().PlayerNeedToPause(false);
+        inventoryItems[slotNumber].SetActive(false);
         Image image = inventorySlots[slotNumber].GetComponent<Image>();
         Color color=image.color;
-        color.a=0.5f;
+        color = new Color(0.2f,0.2f,0.2f,0.5f);
         image.color=color;
     }
 

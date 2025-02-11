@@ -368,6 +368,7 @@
 "Assets/Scripts/Individual/ExitDoor.cs"
 "Assets/Scripts/Individual/FlashOnOff.cs"
 "Assets/Scripts/Individual/Key.cs"
+"Assets/Scripts/Individual/MapInventory.cs"
 "Assets/Scripts/Individual/TextFadeEffect.cs"
 "Assets/Scripts/Managers/GameManager.cs"
 "Assets/Scripts/Managers/MenuManager.cs"

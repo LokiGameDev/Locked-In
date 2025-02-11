@@ -13,8 +13,9 @@ public class CameraMovement : MonoBehaviour
     }
     void Update()
     {
+        PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
         // Checking if the player is alive
-        if(GameObject.Find("Player").GetComponent<PlayerController>().isPlayerAlive && !UIManager.Instance.isGamePaused)
+        if(player.isPlayerAlive && !player.isPlayerNeedToPause && !UIManager.Instance.isGamePaused)
         {
             CamMovement();
         }
