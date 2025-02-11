@@ -20,7 +20,7 @@ public class PlayerInventoryManager : MonoBehaviour
         isPlayerInventoryOn=false;
         _inventorySlotSelected=0;
         SelectSlot(_inventorySlotSelected);
-        _totalSlots=4;
+        _totalSlots=3;
         DisablePlayerInventory();
     }
 
@@ -39,6 +39,15 @@ public class PlayerInventoryManager : MonoBehaviour
         if(isPlayerInventoryOn)
         {
             ScrollSlotChange(scroll);
+        }
+
+        if(UIManager.Instance.isIntructionOn || GameManager.Instance.isIntroScreeEnabled)
+        {
+            DisablePlayerInventory();
+        }
+        else
+        {
+            EnablePlayerInventory();
         }
     }
 

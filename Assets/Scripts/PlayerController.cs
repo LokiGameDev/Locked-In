@@ -68,7 +68,6 @@ public class PlayerController : MonoBehaviour
     // Player claiming a key
     public void KeyClaimed()
     {
-        UIManager.Instance.GotAKey(keyCount);
         if(keyCount<2)
         {
             UIManager.Instance.EnemyLevelScreen(keyCount);

@@ -27,10 +27,10 @@ public class UIManager : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject gameWonScreen;
     public GameObject pauseGameScreen;
+    public GameObject inventoryObject;
     public bool isIntructionOn;
     public bool isGamePaused;
     private int _screenLevel;
-    public GameObject[] keyCountObjects;
     public GameObject[] enemyLevelInstructions;
     void Start()
     {
@@ -80,10 +80,6 @@ public class UIManager : MonoBehaviour
     }
 
     // Enabling image for each key collected
-    public void GotAKey(int keyIndex)
-    {
-        keyCountObjects[keyIndex].SetActive(true);
-    }
 
     public void EnemyLevelScreen(int screenLevel)
     {
