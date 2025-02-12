@@ -51,6 +51,7 @@ UnityEngine.Application::OpenURL
 UnityEngine.Application::Quit
 UnityEngine.Application::get_platform
 UnityEngine.AsyncOperation::InternalDestroy
+UnityEngine.Audio.AudioMixer::SetFloat
 UnityEngine.AudioSource::PlayHelper
 UnityEngine.Behaviour::get_enabled
 UnityEngine.Behaviour::get_isActiveAndEnabled
@@ -303,6 +304,7 @@ UnityEngine.Input::get_mousePresent
 UnityEngine.Input::get_touchSupported
 UnityEngine.Input::get_touchCount
 UnityEngine.Input::get_compositionString
+UnityEngine.Input::get_inputString
 UnityEngine.Input::ClearLastPenContactEvent
 UnityEngine.Input::GetLastPenContactEvent_Injected
 UnityEngine.Input::GetTouch_Injected
@@ -442,6 +444,7 @@ UnityEngine.PlayerConnectionInternal::RegisterInternal
 UnityEngine.PlayerConnectionInternal::SendMessage
 UnityEngine.PlayerConnectionInternal::UnregisterInternal
 UnityEngine.PropertyNameUtils::PropertyNameFromString_Injected
+UnityEngine.QualitySettings::SetQualityLevel
 UnityEngine.QualitySettings::get_activeColorSpace
 UnityEngine.Quaternion::AngleAxis_Injected
 UnityEngine.Quaternion::Internal_FromEulerRad_Injected
@@ -516,6 +519,9 @@ UnityEngine.Screen::get_fullScreen
 UnityEngine.Screen::get_height
 UnityEngine.Screen::get_width
 UnityEngine.Screen::get_dpi
+UnityEngine.Screen::SetResolution_Injected
+UnityEngine.Screen::set_fullScreen
+UnityEngine.Screen::get_resolutions
 UnityEngine.ScriptableObject::CreateScriptableObject
 UnityEngine.ScriptableObject::CreateScriptableObjectInstanceFromType
 UnityEngine.ScriptingRuntime::GetAllUserAssemblies

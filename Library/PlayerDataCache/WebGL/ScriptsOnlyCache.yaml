@@ -7,11 +7,17 @@ ScriptsOnlyBuild:
     - FlashOnOff
     - GameManager
     - Key
+    - KeyCountInventory
+    - MapInventory
     - MenuManager
     - MenuUIManager
     - MovingEnemy
     - PlayerController
+    - PlayerFollower
+    - PlayerInventoryManager
+    - SettingsManager
     - StaticEnemy
+    - TextFadeEffect
     - UIManager
     Unity.AI.Navigation.Editor.dll:
     - Unity.AI.Navigation.Editor.NavigationWindow
@@ -29,6 +35,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     Unity.TextMeshPro.dll:
+    - TMPro.TMP_Dropdown
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
@@ -52,12 +59,21 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.RawImage
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Slider
+    - UnityEngine.UI.Toggle
   serializedClasses:
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
     - TMPro.FontAssetCreationSettings
     - TMPro.KerningTable
     - TMPro.TMP_Character
+    - TMPro.TMP_Dropdown/DropdownEvent
+    - TMPro.TMP_Dropdown/OptionData
+    - TMPro.TMP_Dropdown/OptionDataList
     - TMPro.TMP_FontFeatureTable
     - TMPro.TMP_FontWeightPair
     - TMPro.TMP_GlyphAdjustmentRecord
@@ -83,11 +99,42 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
+    - UnityEngine.UI.ScrollRect/ScrollRectEvent
+    - UnityEngine.UI.Scrollbar/ScrollEvent
+    - UnityEngine.UI.Slider/SliderEvent
     - UnityEngine.UI.SpriteState
+    - UnityEngine.UI.Toggle/ToggleEvent
   methodsToPreserve:
   - assembly: Assembly-CSharp
     fullTypeName: MenuManager
     methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsManager
+    methodName: SetQualityLevel
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsManager
+    methodName: IndividualSettingMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsManager
+    methodName: IndividualSettingMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsManager
+    methodName: SetVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsManager
+    methodName: SetFullScreen
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuManager
+    methodName: SettingsExit
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsManager
+    methodName: IndividualSettingMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuManager
+    methodName: SettingsMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsManager
+    methodName: SetResolution
   - assembly: Assembly-CSharp
     fullTypeName: MenuManager
     methodName: StartGame
@@ -141,6 +188,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 84
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
@@ -154,41 +203,53 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17332}
     - Class: 114
-      Script: {instanceID: 17690}
+      Script: {instanceID: 17356}
     - Class: 114
-      Script: {instanceID: 17896}
+      Script: {instanceID: 17402}
     - Class: 114
-      Script: {instanceID: 18196}
+      Script: {instanceID: 17692}
     - Class: 114
-      Script: {instanceID: 18562}
+      Script: {instanceID: 17898}
     - Class: 114
-      Script: {instanceID: 18618}
+      Script: {instanceID: 17946}
     - Class: 114
-      Script: {instanceID: 20134}
+      Script: {instanceID: 18200}
     - Class: 114
-      Script: {instanceID: 20312}
+      Script: {instanceID: 18568}
     - Class: 114
-      Script: {instanceID: 20708}
+      Script: {instanceID: 18598}
     - Class: 114
-      Script: {instanceID: 20756}
+      Script: {instanceID: 18626}
     - Class: 114
-      Script: {instanceID: 20782}
+      Script: {instanceID: 18976}
     - Class: 114
-      Script: {instanceID: 20804}
+      Script: {instanceID: 20154}
     - Class: 114
-      Script: {instanceID: 20870}
+      Script: {instanceID: 20332}
     - Class: 114
-      Script: {instanceID: 21002}
+      Script: {instanceID: 20732}
     - Class: 114
-      Script: {instanceID: 21196}
+      Script: {instanceID: 20780}
     - Class: 114
-      Script: {instanceID: 21240}
+      Script: {instanceID: 20806}
     - Class: 114
-      Script: {instanceID: 21268}
+      Script: {instanceID: 20828}
     - Class: 114
-      Script: {instanceID: 22104}
+      Script: {instanceID: 20896}
     - Class: 114
-      Script: {instanceID: 22994}
+      Script: {instanceID: 21030}
+    - Class: 114
+      Script: {instanceID: 21228}
+    - Class: 114
+      Script: {instanceID: 21272}
+    - Class: 114
+      Script: {instanceID: 21300}
+    - Class: 114
+      Script: {instanceID: 22140}
+    - Class: 114
+      Script: {instanceID: 22272}
+    - Class: 114
+      Script: {instanceID: 23042}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -251,27 +312,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17272}
     - Class: 114
-      Script: {instanceID: 17690}
+      Script: {instanceID: 17692}
     - Class: 114
-      Script: {instanceID: 17896}
+      Script: {instanceID: 17698}
     - Class: 114
-      Script: {instanceID: 18196}
+      Script: {instanceID: 17898}
     - Class: 114
-      Script: {instanceID: 18912}
+      Script: {instanceID: 18200}
     - Class: 114
-      Script: {instanceID: 19180}
+      Script: {instanceID: 18920}
     - Class: 114
-      Script: {instanceID: 19434}
+      Script: {instanceID: 18954}
     - Class: 114
-      Script: {instanceID: 20134}
+      Script: {instanceID: 19192}
     - Class: 114
-      Script: {instanceID: 20708}
+      Script: {instanceID: 19452}
     - Class: 114
-      Script: {instanceID: 20870}
+      Script: {instanceID: 20030}
     - Class: 114
-      Script: {instanceID: 21196}
+      Script: {instanceID: 20084}
     - Class: 114
-      Script: {instanceID: 22678}
+      Script: {instanceID: 20154}
+    - Class: 114
+      Script: {instanceID: 20732}
+    - Class: 114
+      Script: {instanceID: 20896}
+    - Class: 114
+      Script: {instanceID: 21228}
+    - Class: 114
+      Script: {instanceID: 21236}
+    - Class: 114
+      Script: {instanceID: 22288}
+    - Class: 114
+      Script: {instanceID: 22720}
+    - Class: 114
+      Script: {instanceID: 22954}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -289,6 +364,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 225
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -389,10 +470,16 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreakMessageListener
   - hash:
       serializedVersion: 2
-      Hash: a93f21004df137bdd18eeceb949c7e98
+      Hash: 40c4efcbeef00d644b427ad23cfba4cf
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: UIManager
+  - hash:
+      serializedVersion: 2
+      Hash: 3ae2d253066c9876553c444f29c64136
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: KeyCountInventory
   - hash:
       serializedVersion: 2
       Hash: 1ab136900c0edaeeb49424c852595030
@@ -465,6 +552,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_SelectionCaret
+  - hash:
+      serializedVersion: 2
+      Hash: fe94191378d087a62908d13fbed99aa4
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerInventoryManager
   - hash:
       serializedVersion: 2
       Hash: 28fd3d045acc780719a17f02073eb448
@@ -593,6 +686,12 @@ ScriptsOnlyBuild:
     className: UnityOnControllerColliderHitMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 320ed0edb769f5933a8f11862d08a8dd
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MapInventory
+  - hash:
+      serializedVersion: 2
       Hash: 960935b102b3064f4b924de16426e340
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -629,7 +728,7 @@ ScriptsOnlyBuild:
     className: UnityOnPointerExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: b653d92cb8fce9fad1577ee38ba6d5e1
+      Hash: d1aee1d8cee272e0d2507c71cac99244
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: MenuManager
@@ -639,6 +738,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: 8c1e4b870ee52ade5c5dabaac29afacf
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerFollower
   - hash:
       serializedVersion: 2
       Hash: 4718916586b3818eb69bf65df61f0f3a
@@ -1121,6 +1226,12 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: 8ce532eecc854670d5ea4203ad717e3a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TextFadeEffect
+  - hash:
+      serializedVersion: 2
       Hash: d5cd7f207e91ca8336c65a577a6fb2a0
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -1191,6 +1302,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 9e526f84758cade4240007f40b8dd041
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SettingsManager
   - hash:
       serializedVersion: 2
       Hash: 00eef92bf387da2c9009267123d9d674

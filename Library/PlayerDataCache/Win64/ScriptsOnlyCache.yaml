@@ -7,10 +7,14 @@ ScriptsOnlyBuild:
     - FlashOnOff
     - GameManager
     - Key
+    - KeyCountInventory
+    - MapInventory
     - MenuManager
     - MenuUIManager
     - MovingEnemy
     - PlayerController
+    - PlayerFollower
+    - PlayerInventoryManager
     - SettingsManager
     - StaticEnemy
     - TextFadeEffect
@@ -53,6 +57,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Mask
+    - UnityEngine.UI.RawImage
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
@@ -180,6 +185,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 84
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
@@ -193,43 +200,53 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17332}
     - Class: 114
-      Script: {instanceID: 17690}
+      Script: {instanceID: 17356}
     - Class: 114
-      Script: {instanceID: 17896}
+      Script: {instanceID: 17402}
     - Class: 114
-      Script: {instanceID: 18196}
+      Script: {instanceID: 17692}
     - Class: 114
-      Script: {instanceID: 18564}
+      Script: {instanceID: 17898}
     - Class: 114
-      Script: {instanceID: 18620}
+      Script: {instanceID: 17946}
     - Class: 114
-      Script: {instanceID: 20146}
+      Script: {instanceID: 18200}
     - Class: 114
-      Script: {instanceID: 20324}
+      Script: {instanceID: 18568}
     - Class: 114
-      Script: {instanceID: 20724}
+      Script: {instanceID: 18598}
     - Class: 114
-      Script: {instanceID: 20772}
+      Script: {instanceID: 18626}
     - Class: 114
-      Script: {instanceID: 20798}
+      Script: {instanceID: 18976}
     - Class: 114
-      Script: {instanceID: 20820}
+      Script: {instanceID: 20154}
     - Class: 114
-      Script: {instanceID: 20888}
+      Script: {instanceID: 20332}
     - Class: 114
-      Script: {instanceID: 21022}
+      Script: {instanceID: 20732}
     - Class: 114
-      Script: {instanceID: 21220}
+      Script: {instanceID: 20780}
     - Class: 114
-      Script: {instanceID: 21264}
+      Script: {instanceID: 20806}
     - Class: 114
-      Script: {instanceID: 21292}
+      Script: {instanceID: 20828}
     - Class: 114
-      Script: {instanceID: 22132}
+      Script: {instanceID: 20896}
     - Class: 114
-      Script: {instanceID: 22264}
+      Script: {instanceID: 21030}
     - Class: 114
-      Script: {instanceID: 23034}
+      Script: {instanceID: 21228}
+    - Class: 114
+      Script: {instanceID: 21272}
+    - Class: 114
+      Script: {instanceID: 21300}
+    - Class: 114
+      Script: {instanceID: 22140}
+    - Class: 114
+      Script: {instanceID: 22272}
+    - Class: 114
+      Script: {instanceID: 23042}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -292,41 +309,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17272}
     - Class: 114
-      Script: {instanceID: 17690}
+      Script: {instanceID: 17692}
     - Class: 114
-      Script: {instanceID: 17696}
+      Script: {instanceID: 17698}
     - Class: 114
-      Script: {instanceID: 17896}
+      Script: {instanceID: 17898}
     - Class: 114
-      Script: {instanceID: 18196}
+      Script: {instanceID: 18200}
     - Class: 114
-      Script: {instanceID: 18914}
+      Script: {instanceID: 18920}
     - Class: 114
-      Script: {instanceID: 18948}
+      Script: {instanceID: 18954}
     - Class: 114
-      Script: {instanceID: 19184}
+      Script: {instanceID: 19192}
     - Class: 114
-      Script: {instanceID: 19444}
+      Script: {instanceID: 19452}
     - Class: 114
-      Script: {instanceID: 20022}
+      Script: {instanceID: 20030}
     - Class: 114
-      Script: {instanceID: 20076}
+      Script: {instanceID: 20084}
     - Class: 114
-      Script: {instanceID: 20146}
+      Script: {instanceID: 20154}
     - Class: 114
-      Script: {instanceID: 20724}
+      Script: {instanceID: 20732}
     - Class: 114
-      Script: {instanceID: 20888}
-    - Class: 114
-      Script: {instanceID: 21220}
+      Script: {instanceID: 20896}
     - Class: 114
       Script: {instanceID: 21228}
     - Class: 114
-      Script: {instanceID: 22280}
+      Script: {instanceID: 21236}
     - Class: 114
-      Script: {instanceID: 22712}
+      Script: {instanceID: 22288}
     - Class: 114
-      Script: {instanceID: 22946}
+      Script: {instanceID: 22720}
+    - Class: 114
+      Script: {instanceID: 22954}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -450,10 +467,16 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreakMessageListener
   - hash:
       serializedVersion: 2
-      Hash: a93f21004df137bdd18eeceb949c7e98
+      Hash: 40c4efcbeef00d644b427ad23cfba4cf
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: UIManager
+  - hash:
+      serializedVersion: 2
+      Hash: 3ae2d253066c9876553c444f29c64136
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: KeyCountInventory
   - hash:
       serializedVersion: 2
       Hash: 1ab136900c0edaeeb49424c852595030
@@ -526,6 +549,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_SelectionCaret
+  - hash:
+      serializedVersion: 2
+      Hash: fe94191378d087a62908d13fbed99aa4
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerInventoryManager
   - hash:
       serializedVersion: 2
       Hash: 28fd3d045acc780719a17f02073eb448
@@ -654,6 +683,12 @@ ScriptsOnlyBuild:
     className: UnityOnControllerColliderHitMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 320ed0edb769f5933a8f11862d08a8dd
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MapInventory
+  - hash:
+      serializedVersion: 2
       Hash: 960935b102b3064f4b924de16426e340
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -700,6 +735,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: 8c1e4b870ee52ade5c5dabaac29afacf
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerFollower
   - hash:
       serializedVersion: 2
       Hash: 4718916586b3818eb69bf65df61f0f3a
