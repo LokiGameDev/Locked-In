@@ -370,6 +370,7 @@
 "Assets/Scripts/Individual/Key.cs"
 "Assets/Scripts/Individual/KeyCountInventory.cs"
 "Assets/Scripts/Individual/MapInventory.cs"
+"Assets/Scripts/Individual/PlayerFollower.cs"
 "Assets/Scripts/Individual/TextFadeEffect.cs"
 "Assets/Scripts/Managers/GameManager.cs"
 "Assets/Scripts/Managers/MenuManager.cs"
