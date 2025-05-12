@@ -15,10 +15,12 @@ Play my game -> [Itch.io](https://lokidevtamil.itch.io/locked-in)
 
 ## In-Game Screenshots
 
-<img src="/Ingame%20screenshots/Indie%20Runner%201.png" width="500" height="275">
+<img src="/In Game Screenshots/1.jpg" width="500" height="275">
 
-<img src="/Ingame%20screenshots/Indie%20Runner%202.png" width="500" height="275">
+<img src="/In Game Screenshots/2.jpg" width="500" height="275">
 
-<img src="/Ingame%20screenshots/Indie%20Runner%203.png" width="500" height="275">
+<img src="/In Game Screenshots/3.jpg" width="500" height="275">
+
+<img src="/In Game Screenshots/4.jpg" width="500" height="275">
 
 ## Thanks for playing my game
